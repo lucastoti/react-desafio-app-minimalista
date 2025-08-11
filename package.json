@@ -1,0 +1,21 @@
+{
+  "name": "react-ultra-minimal-starter",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npm run build && live-server dist --port=3000 --open=/",
+    "dev": "npm run build && concurrently \"npm run watch\" \"live-server dist --port=3000 --open=/\"",
+    "build": "cp src/index.html dist/ && esbuild src/index.jsx --bundle --outfile=dist/bundle.js",
+    "watch": "esbuild src/index.jsx --bundle --outfile=dist/bundle.js --watch",
+    "serve": "live-server dist --port=3000"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "esbuild": "^0.19.0",
+    "live-server": "^1.2.2"
+  }
+}
